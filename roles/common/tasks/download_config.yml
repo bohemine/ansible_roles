@@ -1,0 +1,13 @@
+
+  - name: download config files to home
+    get_url: url=https://raw.githubusercontent.com/bohemine/centos/master/{{ item }}.bak
+             dest=/home/{{ common_user_name }}/{{ item }}
+             force=yes
+    with_items: 
+      - .bash_profile
+      - .bashrc
+      - .vimrc
+      - .zshenv
+      - .zshrc
+      - .tmux.conf
+             

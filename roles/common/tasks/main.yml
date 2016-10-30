@@ -1,0 +1,7 @@
+---
+# tasks file for common
+
+ - include: make_directories.yml
+ - include: download_config.yml
+ - include: install_packages.yml
+

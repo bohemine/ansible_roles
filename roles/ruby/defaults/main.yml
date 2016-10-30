@@ -1,0 +1,6 @@
+---
+# defaults file for ruby
+
+ruby_user_name: vagrant
+ruby_version: 2.3.0
+

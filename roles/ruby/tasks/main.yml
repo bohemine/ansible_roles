@@ -1,0 +1,21 @@
+---
+# tasks file for ruby
+
+ - name: clone rbenv repo
+   git: repo=https://github.com/rbenv/rbenv.git
+        dest=/home/{{ ruby_user_name }}/.rbenv
+
+ - name: clone ruby-build repo
+   git: repo=https://github.com/rbenv/ruby-build.git 
+        dest=/home/{{ ruby_user_name }}/.rbenv/plugins/ruby-build
+ 
+ - name: install ruby
+   shell: rbenv install {{ ruby_version }}
+
+ - name: rbenv init
+   shell: eval "$(rbenv init -)"
+
+ - name: install ruby
+   shell: rbenv global {{ ruby_version }}
+
+

@@ -1,0 +1,19 @@
+ 
+
+#make directories
+   - name: make directories below home
+     file: path=/home/{{ common_user_name }}/{{ item }} state=directory owner={{ common_user_name }} group={{ common_user_name }} mode=0775
+     with_items:
+       - bin
+       - tmp
+       - repos
+       - desktop
+       - devel
+       - tools
+
+   - name: make directories below tools
+     file: path=/home/{{ common_user_name }}/tools/{{ item }} state=directory owner={{ common_user_name }} group={{ common_user_name }} mode=0775
+     with_items:
+       - ansible
+
+

@@ -1,0 +1,35 @@
+ 
+#install Packages 
+#tmux must be installed after instaltion 'epel-release'.
+
+ - name: install commands
+   yum: name={{ item }} state=latest
+   with_items:
+    - man
+    - zip
+    - unzip
+
+ - name: install tools
+   yum: name={{ item }} state=latest
+   with_items:
+    - mlocate
+    - dstat
+    - net-tools
+    - gcc
+    - gcc-c++
+    - epel-release
+    - libffi
+    - libffi-dev
+    - openssl-devel
+    - readline-devel
+    - zlib-devel
+    - libselinux-python
+
+ - name: install applications
+   yum: name={{ item }} state=latest
+   with_items:
+    - git
+    - zsh
+    - vim-enhanced
+    - tmux
+
