@@ -1,0 +1,15 @@
+---
+# tasks file for nodejs
+
+ - name: install nvm
+   git: repo=https://github/creationix/nvm.git
+        dest=/home/{{ nvm_user_name }}/.nvm
+
+ - name: restart zsh
+   shell: exec $SHELL -l
+
+ - name: install node.js
+   shell: nvm install {{ nodejs_version }}
+
+ - name: set default node.js version
+   shell: nvm alias {{ nodejs_version }}

@@ -1,0 +1,6 @@
+---
+# defaults file for nodejs
+
+nodejs_user_name: vagrant
+nodejs_version: v6.9.1
+
